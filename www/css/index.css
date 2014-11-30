@@ -78,6 +78,10 @@ h1 {
     text-align:center;
 }
 
+a {
+  text-decoration: none;
+}
+
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -112,4 +116,20 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+.header-button {
+  position: absolute;
+  top: 6px;
+  padding: 7px 5px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1em;
+}
+
+.header-button-left {
+  left: 4px;
+}
+
+.header-button-right {
+  right: 4px;
 }
