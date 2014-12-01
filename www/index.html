@@ -43,12 +43,51 @@
         <a class='button button--large login-button'>Log In</a>
       </div>
     </script>
+
+    <!-- SignUp View -->
+    <script id='signup-tpl' type='text/x-handlebars-tempalte'>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <a href='#' class='button--quiet button'>Back</a>
+        </div>
+        <div class='navigation-bar__center'>
+          TALLY BETA 0.1
+        </div>
+      </div>
+      <div class='formarea'>
+        <div class='form-row'>
+        <input type='text' class='text-input--underbar first-name-input' placeholder='First Name' />
+        <input type='text' class='text-input--underbar last-name-input' placeholder='Last Name' />
+        </div>
+        <div class='form-row'>
+          <input type='number' class='text-input--underbar age-input' placeholder='Age' />
+        </div>
+        <div class='form-row'>
+          <div class='button-bar' style='margin: 0 auto;'>
+            <div class='button-bar__item'>
+              <input type='radio' name='segment-a' checked />
+              <button class='button-bar__button'>Male</a>
+            </div>
+            <div class='button-bar__item'>
+              <input type='radio' name='segment-a' />
+              <button class='button-bar__button'>Female</a>
+            </div>
+          </div>
+        </div>
+        <div class='form-row'>
+          <a class='button button--large signup-button'>Sign Up</a>
+        </div>
+      </div>
+    </script>
  
     <script type='text/javascript' src='cordova.js'></script>
+    <!-- Libraries -->
     <script type='text/javascript' src='lib/handlebars-v2.0.0.js'></script>
     <script type='text/javascript' src='lib/jquery-2.1.1.min.js'></script>
+    <!-- Views -->
     <script type='text/javascript' src='js/HomeView.js'></script>
     <script type='text/javascript' src='js/LoginView.js'></script>
+    <script type='text/javascript' src='js/SignUpView.js'></script>
     <script type='text/javascript' src='js/index.js'></script>
   </body>
 </html>
