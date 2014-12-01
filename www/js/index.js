@@ -3,7 +3,8 @@ var app = {
     initialize: function() {
         this.bindEvents();
         this.homeView = new HomeView().render();
-        $('body').html(this.homeView.el);
+        this.loginView = new LoginView().render();
+        $('body').html(this.loginView.el);
     },
     // Bind Event Listeners
     //
