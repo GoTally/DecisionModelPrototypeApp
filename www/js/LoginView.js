@@ -1,7 +1,7 @@
 var LoginView = function() {
 
   this.login = function() {
-    console.log('log in or create user');
+    console.log('log in user');
   };
 
   this.render = function() {
