@@ -7,6 +7,9 @@ var HomeView = function() {
 
   this.initialize = function() {
     this.el = $('<div/>');
+    this.el.on('click', '.navigation-bar__left', function() {
+      console.log('SORT');
+    });
   };
 
   this.initialize();

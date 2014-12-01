@@ -10,14 +10,35 @@
     <title>Decision Model Prototype</title>
   </head>
   <body>
+    <!-- Home View -->
     <script id='home-tpl' type='text/x-handlebars-template'>
-      <div class='header nav-bar'>
-        <a href='#' class='button header-button sort-button header-button-left'>Sort</a>
-        <h1>Tally Beta 0.1</h1> 
-        <a href='#' class='button header-button new-button header-button-right'>+</a>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <span class='toolbar-button--quiet navigation-bar__line-height'>
+            Sort
+          </span>
+        </div>
+        <div class='navigation-bar__center'>
+          Tally Beta 0.1
+        </div>
+        <div class='navigation-bar__right'>
+          <span class='toolbar-button--quiet navigation-bar__line-height'>
+            Add
+          </span>
+        </div>
       </div>
-      <div class='scroll'>
-        <ul class='list event-list'></ul>
+    </script>
+
+    <!-- LogIn View -->
+    <script id='login-tpl' type='text/x-handlebars-template'>
+      <div class='header'>
+        <h1>Tally Beta 0.1</h1>
+      </div>
+      <div class='login'>
+        <h2>Log In</h2>
+        <input class='first-name-bar' type='text' placeholder='First Name' />
+        <input class='last-name-bar' type='text' placeholder='Last Name' />
+        <a href='#' class='button login-btn'>LogIn</a>
       </div>
     </script>
  
@@ -25,6 +46,7 @@
     <script type='text/javascript' src='lib/handlebars-v2.0.0.js'></script>
     <script type='text/javascript' src='lib/jquery-2.1.1.min.js'></script>
     <script type='text/javascript' src='js/HomeView.js'></script>
+    <script type='text/javascript' src='js/LoginView.js'></script>
     <script type='text/javascript' src='js/index.js'></script>
   </body>
 </html>
