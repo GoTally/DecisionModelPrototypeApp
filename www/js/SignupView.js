@@ -1,8 +1,8 @@
 var SignupView = function() {
 
   this.createUser = function(event) {
-    var first_name = $('.first-name-input').val()
-    var last_name = $('.last-name-input').val();
+    var first_name = $('.form-row .first-name-input').val()
+    var last_name = $('.form-row .last-name-input').val();
     var age = parseInt($('.age-input').val());
     var gender = $('.button-bar__item')[0].children[0].checked ? 'Male' : 'Female'; // oh dear...
 
@@ -14,7 +14,9 @@ var SignupView = function() {
     //$.post('http://localhost:3000/users', {
     $.post('https://decision-prototype.herokuapp.com/users', {
         first_name: first_name,
-        last_name: last_name
+        last_name: last_name,
+        age: age,
+        gender: gender
     },
     function(response) {
       console.log(response);
