@@ -31,6 +31,14 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    showAlert: function(message) {
+      if (navigator.notification) {
+        navigator.notification.alert(message, null);
+      } else {
+        alert(message);
+      }
     }
 };
 
