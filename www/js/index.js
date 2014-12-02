@@ -2,10 +2,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        this.homeView = new HomeView().render();
-        this.loginView = new LoginView().render();
-        this.signupView = new SignupView().render();
-        $('body').html(this.loginView.el);
+        this.route();
     },
     // Bind Event Listeners
     //
@@ -13,6 +10,9 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+
+        // Routing
+        $(window).on('hashchange', $.proxy(this.route, this));
     },
     // deviceready Event Handler
     //
@@ -39,6 +39,53 @@ var app = {
       } else {
         alert(message);
       }
+    },
+
+    route: function() {
+      var hash = window.location.hash;
+      var signupUrl = /#signup/;
+
+      if(!hash) {
+        if (!this.loginView) {
+          this.loginView = new LoginView().render();
+        }
+        this.slidePage(this.loginView);
+        return;
+      }
+
+      if (hash.match(signupUrl)) {
+        this.slidePage(new SignupView().render());
+      }
+    },
+
+    slidePage: function(page) {
+      var self = this;
+      var currentPageDest;
+
+      if (!this.currentPage) {
+        $(page.el).attr('class', 'page stage-center');
+        $('body').append(page.el);
+        this.currentPage = page;
+        return;
+      }
+
+      $('.stage-right, .stage-left').not('loginView').remove();
+
+      if (page == app.loginView) {
+        $(page.el).attr('class', 'page stage-left');
+        currentPageDest = 'stage-right';
+      } else {
+        $(page.el).attr('class', 'page stage-right');
+        currentPageDest = 'stage-left';
+      }
+
+      $('body').append(page.el);
+
+      setTimeout(function() {
+        $(self.currentPage.el).attr('class', 'page transition ' + currentPageDest);
+        $(page.el).attr('class', 'page stage-center transition');
+        self.currentPage = page;
+      });
     }
 };
 
