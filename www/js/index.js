@@ -5,7 +5,7 @@ var app = {
         this.homeView = new HomeView().render();
         this.loginView = new LoginView().render();
         this.signupView = new SignupView().render();
-        $('body').html(this.signupView.el);
+        $('body').html(this.loginView.el);
     },
     // Bind Event Listeners
     //

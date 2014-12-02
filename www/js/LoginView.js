@@ -1,7 +1,29 @@
 var LoginView = function() {
 
   this.login = function() {
-    console.log('log in user');
+    var first_name = $('.login-form .first-name-input').val();
+    var last_name = $('.login-form .last-name-input').val();
+
+    if (!first_name && !last_name) {
+      app.showAlert('Must have valid first and last name to log in');
+      return;
+    }
+
+    $.ajax({
+      url: 'http://decision-prototype.herokuapp.com/users',
+      dataType: 'jsonp',
+      data: {
+        first_name: first_name,
+        last_name: last_name
+      },
+      success: function(response) {
+        if(response.length) {
+          app.userId = response[0].id;
+          return;
+        }
+        app.showAlert('Problem logging in. Try again.');
+      }
+    });
   };
 
   this.render = function() {
