@@ -43,7 +43,8 @@ var app = {
 
     route: function() {
       var hash = window.location.hash;
-      var signupUrl = /#signup/;
+      var signupHash = /#signup/;
+      var homeHash = /#home/;
 
       if(!hash) {
         if (!this.loginView) {
@@ -53,8 +54,13 @@ var app = {
         return;
       }
 
-      if (hash.match(signupUrl)) {
+      if (hash.match(signupHash)) {
         this.slidePage(new SignupView().render());
+      } else if (hash.match(homeHash)) {
+        if (!this.homeView) {
+          this.homeView = new HomeView().render();
+        }
+        this.slidePage(this.homeView);
       }
     },
 

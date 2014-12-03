@@ -18,7 +18,9 @@ var LoginView = function() {
       },
       success: function(response) {
         if(response.length) {
-          app.userId = response[0].id;
+          // Maybe save to local or session storage
+          app.user_id = response[0].id;
+          window.location.hash = '#home';
           return;
         }
         app.showAlert('Problem logging in. Try again.');
