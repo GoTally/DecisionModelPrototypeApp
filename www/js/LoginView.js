@@ -9,14 +9,11 @@ var LoginView = function() {
       return;
     }
 
-    $.ajax({
-      url: 'http://decision-prototype.herokuapp.com/users',
-      dataType: 'jsonp',
-      data: {
+    $.get('https://decision-prototype.herokuapp.com/users', {
         first_name: first_name,
         last_name: last_name
       },
-      success: function(response) {
+      function(response) {
         if(response.length) {
           // Maybe save to local or session storage
           app.user_id = response[0].id;
@@ -24,7 +21,6 @@ var LoginView = function() {
           return;
         }
         app.showAlert('Problem logging in. Try again.');
-      }
     });
   };
 
