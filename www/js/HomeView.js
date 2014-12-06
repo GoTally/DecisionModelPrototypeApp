@@ -10,13 +10,14 @@ var HomeView = function() {
 
   this.render = function() {
     this.el.html(HomeView.template());
+    // Make API call to server and get polls with user ID
     return this;
   };
 
   this.initialize = function() {
     this.el = $('<div/>');
-    this.el.on('click', '.navigation-bar__left', this.sort);
-    this.el.on('click', '.navigation-bar__right', this.add);
+    this.el.on('click', '#home-sort-btn', this.sort);
+    this.el.on('click', '#home-add-btn', this.add);
   };
 
   this.initialize();

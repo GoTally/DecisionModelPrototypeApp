@@ -68,7 +68,7 @@
     <script id='home-tpl' type='text/x-handlebars-template'>
       <div class='navigation-bar'>
         <div class='navigation-bar__left'>
-          <span class='toolbar-button--quiet navigation-bar__line-height'>
+          <span id='home-sort-btn' class='toolbar-button--quiet navigation-bar__line-height'>
             Sort
           </span>
         </div>
@@ -76,7 +76,7 @@
           TALLY BETA 0.1
         </div>
         <div class='navigation-bar__right'>
-          <span class='toolbar-button--quiet navigation-bar__line-height'>
+          <span id='home-add-btn' class='toolbar-button--quiet navigation-bar__line-height'>
             Add
           </span>
         </div>
@@ -90,6 +90,26 @@
         </ul>
       </div>
     </script>
+
+    <!-- Poll View -->
+    <script id='poll-tpl' type='text/x-handlebars-template'>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <span id='poll-back-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            Back
+          </span>
+        </div>
+        <div class='navigation-bar__center'>
+        </div>
+        <div class='navigation-bar__right'>
+          <span id='poll-submit-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            Submit
+          </span>
+        </div>
+      </div>
+      <div>
+      </div>
+    </script>
  
     <script type='text/javascript' src='cordova.js'></script>
     <!-- Libraries -->
@@ -99,6 +119,7 @@
     <script type='text/javascript' src='js/LoginView.js'></script>
     <script type='text/javascript' src='js/SignUpView.js'></script>
     <script type='text/javascript' src='js/HomeView.js'></script>
+    <script type='text/javascript' src='js/PollView.js'></script>
     <script type='text/javascript' src='js/index.js'></script>
   </body>
 </html>

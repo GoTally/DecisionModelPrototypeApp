@@ -45,6 +45,7 @@ var app = {
       var hash = window.location.hash;
       var signupHash = /#signup/;
       var homeHash = /#home/;
+      var pollHash = /#poll\/\d+/;
 
       if(!hash) {
         if (!this.loginView) {
@@ -61,6 +62,9 @@ var app = {
           this.homeView = new HomeView().render();
         }
         this.slidePage(this.homeView);
+      } else if (hash.match(pollHash)) {
+        var pollId = hash.split('/')[1];
+        this.slidePage(new PollView(pollId).render());
       }
     },
 
