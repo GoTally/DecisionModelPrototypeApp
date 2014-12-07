@@ -45,7 +45,7 @@ var app = {
       var hash = window.location.hash;
       var signupHash = /#signup/;
       var homeHash = /#home/;
-      var pollHash = /#poll\/\d+/;
+      var pollHash = /#poll\/\d+\/?$/;
 
       if(!hash) {
         if (!this.loginView) {

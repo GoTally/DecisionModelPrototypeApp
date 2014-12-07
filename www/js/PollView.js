@@ -10,7 +10,7 @@ var PollView = function(pollId) {
   };
 
   this.render = function() {
-    this.el.html(PollView.template());
+    this.el.html(PollView.template(pollId));
     // Get data from server
     return this;
   };
