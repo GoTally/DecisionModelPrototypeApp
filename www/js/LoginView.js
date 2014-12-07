@@ -20,8 +20,12 @@ var LoginView = function() {
           window.location.hash = '#home';
           return;
         }
-        app.showAlert('Problem logging in. Try again.');
+        app.showAlert('Could not log in. Try again.');
     });
+  };
+
+  this.signup = function() {
+    window.location.hash = '#signup';
   };
 
   this.render = function() {
@@ -32,6 +36,7 @@ var LoginView = function() {
   this.initialize = function() {
     this.el = $('<div/>');
     this.el.on('click', '.login-button', this.login);
+    this.el.on('click', '.signup-button', this.signup);
   };
 
   this.initialize();

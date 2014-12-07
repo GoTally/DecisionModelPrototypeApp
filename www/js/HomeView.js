@@ -2,10 +2,12 @@ var HomeView = function() {
 
   this.sort = function() {
     console.log('Sort existing polls');
+    app.showAlert('Sort');
   };
 
   this.add = function() {
     console.log('Start new poll');
+    app.showAlert('Add');
   };
 
   this.render = function() {

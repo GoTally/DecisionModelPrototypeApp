@@ -43,8 +43,8 @@ var app = {
 
     route: function() {
       var hash = window.location.hash;
-      var signupHash = /#signup/;
-      var homeHash = /#home/;
+      var signupHash = /#signup\/?/;
+      var homeHash = /#home\/?/;
       var pollHash = /#poll\/\d+\/?$/;
 
       if(!hash) {
