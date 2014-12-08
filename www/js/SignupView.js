@@ -11,7 +11,6 @@ var SignupView = function() {
       return;
     }
 
-    //$.post('http://localhost:3000/users', {
     $.post('https://decision-prototype.herokuapp.com/users', {
         first_name: first_name,
         last_name: last_name,
