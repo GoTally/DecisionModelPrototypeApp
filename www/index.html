@@ -114,36 +114,24 @@
         </div>
       </div>
       <div class='poll-info'>
-        <h1 class='poll-title'>Dinner Tonight</h1>
-        <span class='poll-time-left'>1 day 2 hours left to vote</span>
+        <h1 class='poll-title'>{{this.title}}</h1>
+        <span class='poll-time-left'>time left to vote</span>
         <br>
-        <span class='poll-description'>Lorem ipsum</span>
-        <a href='#poll/{{this}}/invitees' class='list__item list__item--chevron'>Invitees</a>
+        <span class='poll-description'>{{this.description}}</span>
+        <a href='#poll/{{this.id}}/invitees' class='list__item list__item--chevron'>Invitees</a>
         <h1 class='poll-title poll-vote'>Vote</h1>
-        <ul class='list'>
-          <li class'list__item list__item--tappable'>
-          <label class='checkbox checkbox--list-item'>
-            <input type='checkbox'>
-            <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-            Red Robin
-          </label>
-          </li>
-          <li class'list__item list__item--tappable'>
-          <label class='checkbox checkbox--list-item'>
-            <input type='checkbox'>
-            <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-            Applebee's
-          </label>
-          </li>
-          <li class'list__item list__item--tappable'>
-          <label class='checkbox checkbox--list-item'>
-            <input type='checkbox'>
-            <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-            IHOP
-          </label>
-          </li>
+        <ul class='list poll-choice-list'>
         </ul>
       </div>
+    </script>
+    <script id='poll-choice-tpl' type='text/x-handlebars-template'>
+      <li class'list__item list__item--tappable'>
+      <label class='checkbox checkbox--list-item'>
+        <input type='checkbox'>
+        <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+        {{this.value}}
+      </label>
+      </li>
     </script>
  
     <script type='text/javascript' src='cordova.js'></script>

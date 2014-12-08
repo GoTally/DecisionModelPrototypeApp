@@ -6,12 +6,24 @@ var PollView = function(pollId) {
 
   this.submit = function() {
     // Send selections to server
+    //$('.poll-choice-list li').each(function(index, object) {
+    //});
     window.location.hash = '#home';
   };
 
   this.render = function() {
-    this.el.html(PollView.template(pollId));
-    // Get data from server
+    var self = this;
+    $.ajax({
+      url: 'https://decision-prototype.herokuapp.com/polls/'+pollId,
+      dataType: 'jsonp',
+      data: {choices: true},
+      success: function(response) {
+        self.el.html(PollView.template(response));
+        $.each(response.choices, function(index, object) {
+          $('.poll-choice-list').append(PollView.choicetemplate(object));
+        });
+      }
+    });
     return this;
   };
 
@@ -25,3 +37,4 @@ var PollView = function(pollId) {
 }
 
 PollView.template = Handlebars.compile($('#poll-tpl').html());
+PollView.choicetemplate = Handlebars.compile($('#poll-choice-tpl').html());
