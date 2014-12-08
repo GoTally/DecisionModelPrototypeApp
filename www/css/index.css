@@ -1411,3 +1411,8 @@ h1.poll-title {
   font-size: 16px;
   color: #87888f;
 }
+
+/* Home View */
+.poll-entry {
+  color: #fff;
+}

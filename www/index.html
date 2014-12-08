@@ -86,12 +86,15 @@
       </div>
       <div>
         <ul class="list poll-list">
-          <li class="list__header new-poll-list">New</li>
+          <!--<li class="list__header new-poll-list">New</li>-->
           <!--<li class="list__item"></li>-->
-          <li class="list__header voted-poll-list">Voted</li>
-          <li class="list__header decided-poll-list">Decided</li>
         </ul>
       </div>
+    </script>
+    <script id='home-poll-tpl' type='text/x-handlebars-template'>
+      <li class='list__item list__item--tappable'>
+      <a href='#poll/{{this.id}}' class='poll-entry'>{{this.title}}</a>
+      </li>
     </script>
 
     <!-- Poll View -->
