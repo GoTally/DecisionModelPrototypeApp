@@ -136,6 +136,30 @@
 
     <!-- Add New Poll View -->
     <script id='add-poll-tpl' type='text/x-handlebars-template'>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <span id='home-sort-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            Back
+          </span>
+        </div>
+        <div class='navigation-bar__center'>
+          New Poll
+        </div>
+        <div class='navigation-bar__right'>
+          <span id='home-add-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            Send
+          </span>
+        </div>
+      </div>
+      <div class='poll-data'>
+        <input type='text' class='text-input new-poll-title' placeholder='Title' autocapitalize='on'>
+        <textarea class='textarea new-poll-description' placeholder='Description' autocapitalize='on'></textarea>
+        <ul class='list'>
+          <li class='list__item list__item--chevron'>Deadline</li>
+          <li class='list__item list__item--chevron'>Choices</li>
+          <li class='list__item list__item--chevron'>People</li>
+        </ul>
+      </div>
     </script>
  
     <script type='text/javascript' src='cordova.js'></script>
