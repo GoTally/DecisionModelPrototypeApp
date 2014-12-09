@@ -5,10 +5,18 @@ var PollView = function(pollId) {
   };
 
   this.submit = function() {
-    // Send selections to server
-    //$('.poll-choice-list li').each(function(index, object) {
-    //});
+    $('.poll-choice-list li').each(function(index, object) {
+      if ($(object).find('input').is(':checked')) {
+        $.post('https://decision-prototype.herokuapp.com/votes', {
+          choice_id: $(object).data('choice-id'),
+          user_id: app.user_id
+        }, function(response) {
+            console.log(response);
+        });
+      }
+    });
     window.location.hash = '#home';
+    app.showAlert('Your votes were successfully submitted!');
   };
 
   this.render = function() {

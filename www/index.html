@@ -125,10 +125,10 @@
       </div>
     </script>
     <script id='poll-choice-tpl' type='text/x-handlebars-template'>
-      <li class'list__item list__item--tappable'>
+      <li class='list__item list__item--tappable' data-choice-id='{{this.id}}'>
       <label class='checkbox checkbox--list-item'>
         <input type='checkbox'>
-        <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+        <div class='checkbox__checkmark checkbox--list-item__checkmark'></div>
         {{this.value}}
       </label>
       </li>
