@@ -24,11 +24,6 @@ var HomeView = function() {
         });
       }
     });
-    // Make API call to server and get polls with user ID
-    /*$.get(url, { polls: true }, function(response) {
-      app.showAlert(response.polls);
-      $('.poll-list').html(HomeView.litemplate(response.polls));
-    });*/
 
     return this;
   };
