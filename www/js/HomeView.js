@@ -6,12 +6,12 @@ var HomeView = function() {
   };
 
   this.add = function() {
-    console.log('Start new poll');
-    app.showAlert('Add');
+    window.location.hash = 'newpoll';
   };
 
   this.render = function() {
     this.el.html(HomeView.template());
+    app.user_id = 4;
     var url = 'https://decision-prototype.herokuapp.com/users/'+app.user_id;
 
     $.ajax({

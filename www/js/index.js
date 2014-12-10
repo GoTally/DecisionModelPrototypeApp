@@ -46,6 +46,7 @@ var app = {
       var signupHash = /#signup\/?/;
       var homeHash = /#home\/?/;
       var pollHash = /#poll\/\d+\/?$/;
+      var newPollHash = /#newpoll\/?/;
 
       if(!hash) {
         if (!this.loginView) {
@@ -65,6 +66,9 @@ var app = {
       } else if (hash.match(pollHash)) {
         var pollId = hash.split('/')[1];
         this.slidePage(new PollView(pollId).render());
+      } else if (hash.match(newPollHash)) {
+        console.log('Add new poll');
+        this.slidePage(new AddPollView().render());
       }
     },
 
