@@ -6,7 +6,7 @@ var HomeView = function() {
   };
 
   this.add = function() {
-    window.location.hash = 'newpoll';
+    window.location.hash = '#newpoll';
   };
 
   this.render = function() {
