@@ -2,10 +2,12 @@ var AddPollView = function() {
 
   this.back = function() {
     window.location.hash = '#home';
+    app.addPollView = undefined;
   };
 
   this.send = function() {
     app.showAlert('Send data to server');
+    app.addPollView = undefined;
   };
 
   this.render = function() {
