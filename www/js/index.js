@@ -47,6 +47,7 @@ var app = {
       var homeHash = /#home\/?/;
       var pollHash = /#poll\/\d+\/?$/;
       var newPollHash = /#newpoll\/?/;
+      var deadlineHash = /#deadline\/?/;
 
       if(!hash) {
         if (!this.loginView) {
@@ -68,6 +69,8 @@ var app = {
           this.addPollView = new AddPollView().render();
         }
         this.slidePage(this.addPollView);
+      } else if (hash.match(deadlineHash)) {
+        this.slidePage(new DeadlineView().render());
       }
     },
 
