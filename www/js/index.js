@@ -59,16 +59,15 @@ var app = {
       if (hash.match(signupHash)) {
         this.slidePage(new SignupView().render());
       } else if (hash.match(homeHash)) {
-        if (!this.homeView) {
-          this.homeView = new HomeView().render();
-        }
-        this.slidePage(this.homeView);
+        this.slidePage(new HomeView().render());
       } else if (hash.match(pollHash)) {
         var pollId = hash.split('/')[1];
         this.slidePage(new PollView(pollId).render());
       } else if (hash.match(newPollHash)) {
-        console.log('Add new poll');
-        this.slidePage(new AddPollView().render());
+        if (!this.addPollView) {
+          this.addPollView = new AddPollView().render();
+        }
+        this.slidePage(this.addPollView);
       }
     },
 
