@@ -87,7 +87,6 @@
       <div>
         <ul class="list poll-list">
           <!--<li class="list__header new-poll-list">New</li>-->
-          <!--<li class="list__item"></li>-->
         </ul>
       </div>
     </script>
@@ -176,6 +175,31 @@
 
     <!-- Deadline View -->
     <script id='deadline-tpl' type='text/x-handlebars-template'>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <span class='toolbar-button--quiet navigation-bar__line-height'>
+          </span>
+        </div>
+        <div class='navigation-bar__center'>
+          Choose Deadline
+        </div>
+        <div class='navigation-bar__right'>
+          <span id='deadline-ok-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            OK
+          </span>
+        </div>
+      </div>
+      <ul id='deadline-list' class='list'>
+      </ul>
+    </script>
+    <script id='deadline-time-tpl' type='text/x-handlers-template'>
+      <li class='list__item list__item--tappable'>
+      <label class='radio-button radio-button--list-item'>
+        <input type='radio' name='time' data-time='{{this}}'>
+        <div class='radio-button__checkmark radio-button--list-item__checkmark'></div>
+        {{this}}
+      </label>
+      </li>
     </script>
 
     <script type='text/javascript' src='cordova.js'></script>
