@@ -202,11 +202,36 @@
       </li>
     </script>
 
+    <!-- Choices View -->
+    <script id='choices-tpl' type='text/x-handlebars-template'>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <span class='toolbar-button--quiet navigation-bar__line-height'>
+          </span>
+        </div>
+        <div class='navigation-bar__center'>
+          Create Choices
+        </div>
+        <div class='navigation-bar__right'>
+          <span id='deadline-ok-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            OK
+          </span>
+        </div>
+      </div>
+      <div class='choices-section'>
+        <div class='new-choice'>
+        </div>
+        <div id='choices-list' class='list'>
+        </div>
+      </div>
+    </script>
+
     <script type='text/javascript' src='cordova.js'></script>
     <!-- Libraries -->
     <script type='text/javascript' src='lib/handlebars-v2.0.0.js'></script>
     <script type='text/javascript' src='lib/jquery-2.1.1.min.js'></script>
     <!-- Views -->
+    <script type='text/javascript' src='js/ChoicesView.js'></script>
     <script type='text/javascript' src='js/DeadlineView.js'></script>
     <script type='text/javascript' src='js/AddPollView.js'></script>
     <script type='text/javascript' src='js/PollView.js'></script>
