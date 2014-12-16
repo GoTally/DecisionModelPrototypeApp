@@ -213,17 +213,26 @@
           Create Choices
         </div>
         <div class='navigation-bar__right'>
-          <span id='deadline-ok-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+          <span id='choices-ok-btn' class='toolbar-button--quiet navigation-bar__line-height'>
             OK
           </span>
         </div>
       </div>
       <div class='choices-section'>
-        <div class='new-choice'>
+        <div class='add-choice'>
+          <input type='text' class='text-input add-choice-input' placeholder='Add a new choice' value=''>
+          <button class='button button--outline add-choice-btn'>Add</button>
+          <br>
         </div>
-        <div id='choices-list' class='list'>
-        </div>
+        <ul id='choices-list' class='list'>
+        </ul>
       </div>
+    </script>
+    <script id='choices-entry-tpl' type='x-handlebars-template'>
+      <li class='list__item'>
+      <div class='list__item__line-height new-choice'><span>{{this}}</span></div>
+      <button class='button--quiet delete-choice-btn'><span>Delete</span></button>
+      </li>
     </script>
 
     <script type='text/javascript' src='cordova.js'></script>

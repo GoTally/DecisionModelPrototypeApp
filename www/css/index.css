@@ -1710,6 +1710,92 @@ input {
   margin-top: 10px;
 }
 
+.text-input {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  vertical-align: top;
+  outline: none;
+  line-height: 1;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0;
+  border: 1px solid #424242;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #242424;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff;
+  padding: 4px 8px 0 8px;
+  margin: 0;
+  font-size: 15px;
+  height: 31px;
+  font-weight: 400;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.text-input::-webkit-input-placeholder,
+.text-input::-moz-placeholder,
+.text-input::-ms-input-placeholder {
+  color: #87888f;
+}
+
+.button:hover {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.button:active {
+  background-color: #3d74ff;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.button:focus {
+  outline: 0;
+}
+.button:disabled,
+.button[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.button--outline {
+  background-color: transparent;
+  border: 1px solid #3d74ff;
+  color: #3d74ff;
+}
+.button--outline:active {
+  background-color: rgba(61, 116, 255, 0.2);
+  border: 1px solid #3d74ff;
+  color: #3d74ff;
+  opacity: 1;
+}
+.button--outline:hover {
+  border: 1px solid #3d74ff;
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+
 /* Sliding pages */
 .page {
   position: absolute;
@@ -1759,4 +1845,42 @@ h1.poll-title {
 /* Home View */
 .poll-entry {
   color: #fff;
+}
+
+/* Choices View */
+.add-choice {
+  text-align: center;
+}
+
+.choices-section .add-choice .add-choice-input {
+  width: 80%;
+  display: inline-block;
+}
+
+.add-choice-btn {
+  display: inline-block;
+}
+
+#choices-list .list__item {
+  padding: 0;
+}
+
+div.new-choice {
+  display: inline-block;
+  width: 49%;
+}
+
+div.new-choice span {
+  padding-left: 15px;
+}
+
+button.delete-choice-btn {
+  display: inline-block;
+  text-align: right;
+  width: 49%;
+}
+
+button.delete-choice-btn span {
+  padding-right: 15px;
+  color: #ce0b24;
 }
