@@ -49,6 +49,7 @@ var app = {
       var newPollHash = /#newpoll\/?/;
       var deadlineHash = /#deadline\/?/;
       var choicesHash = /#choices\/?/;
+      var peopleHash = /#people\/?/;
 
       if(!hash) {
         if (!this.loginView) {
@@ -74,6 +75,8 @@ var app = {
         this.slidePage(new DeadlineView().render());
       } else if (hash.match(choicesHash)) {
         this.slidePage(new ChoicesView().render());
+      } else if (hash.match(peopleHash)) {
+        this.slidePage(new PeopleView().render());
       }
     },
 

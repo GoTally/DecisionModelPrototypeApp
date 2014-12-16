@@ -11,7 +11,6 @@ var HomeView = function() {
 
   this.render = function() {
     this.el.html(HomeView.template());
-    app.user_id = 4; // For local dev
     var url = 'https://decision-prototype.herokuapp.com/users/'+app.user_id;
 
     $.ajax({
