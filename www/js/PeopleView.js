@@ -4,7 +4,7 @@ var PeopleView = function() {
     AddPollView.people = [];
     var people = $("#people-list input[type='checkbox']:checked")
     $.each(people, function(index, object) {
-      AddPollView.people.push($(object).data('person'));
+      AddPollView.people.push($(object).data('user-id'));
     });
     window.location.hash= '#newpoll';
   };
@@ -17,8 +17,7 @@ var PeopleView = function() {
       dataType: 'jsonp',
       success: function(response) {
         $.each(response, function(index, object) {
-          var full_name = object.first_name + ' ' + object.last_name;
-          $('#people-list').append(PeopleView.persontemplate(full_name));
+          $('#people-list').append(PeopleView.persontemplate(object));
         });
       }
     })
@@ -26,7 +25,7 @@ var PeopleView = function() {
     // This doesn't work as expected
     if (AddPollView.people) {
       $.each(AddPollView.people, function(index, object) {
-        $("#people-list input[data-person='"+object+"']")[0].checked = true;
+        $("#people-list input[data-user-id='"+object+"']")[0].checked = true;
       });
     }
 

@@ -259,9 +259,9 @@
     <script id='person-entry-tpl' type='text/x-handlebars-template'>
       <li class='list__item list__item--tappable'>
       <label class='checkbox checkbox--list-item'>
-        <input type='checkbox' data-person='{{this}}'>
+        <input type='checkbox' data-name='{{this.first_name}} {{this.last_name}}' data-user-id='{{this.id}}'>
         <div class='checkbox__checkmark checkbox--list-item__checkmark'></div>
-        {{this}}
+        {{this.first_name}} {{this.last_name}}
       </label>
       </li>
     </script>
