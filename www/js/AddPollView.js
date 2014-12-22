@@ -6,7 +6,36 @@ var AddPollView = function() {
   };
 
   this.send = function() {
-    app.showAlert('Send data to server');
+    //app.showAlert('Send data to server');
+    var pollId;
+
+    // Create poll
+    // Missing deadline
+    $.post('https://decision-prototype.herokuapp.com/polls', {
+      title: $('.poll-data .new-poll-title').val(),
+      description: $('.poll-data .new-poll-description').val(),
+      status: 'new',
+      type: 'new',
+      creator_user_id: app.user_id
+    },
+    function(response) {
+      pollId = response.id;
+    });
+
+    // Create Choices
+    $.each(AddPollView.choices, function(index, object) {
+      $.post('https://decision-prototype.herokuapp.com/polls', {
+          value: object,
+          poll_id: pollId
+        },
+        function(response) {
+      });
+    });
+
+    // Create poll and user joins
+    // This requires some server changes
+
+    window.location.hash = '#home';
     app.addPollView = undefined;
   };
 
