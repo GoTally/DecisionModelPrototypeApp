@@ -71,6 +71,7 @@ var app = {
           this.addPollView = new AddPollView().render();
         }
         this.slidePage(this.addPollView);
+        this.addPollView.bind();
       } else if (hash.match(deadlineHash)) {
         this.slidePage(new DeadlineView().render());
       } else if (hash.match(choicesHash)) {
