@@ -6,7 +6,6 @@ var AddPollView = function() {
   };
 
   this.send = function() {
-    //app.showAlert('Send data to server');
     var pollId;
 
     // Create poll
@@ -25,15 +24,22 @@ var AddPollView = function() {
     // Create Choices
     $.each(AddPollView.choices, function(index, object) {
       $.post('https://decision-prototype.herokuapp.com/polls', {
-          value: object,
-          poll_id: pollId
-        },
-        function(response) {
+        value: object,
+        poll_id: pollId
+      },
+      function(response) {
       });
     });
 
     // Create poll and user joins
-    // This requires some server changes
+    $.each(AddPollView.people, function(index, object) {
+      $.post('https://decision-prototype.herokuapp.com/voters', {
+        poll_id: pollId,
+        user_id: object
+      },
+      function(response) {
+      });
+    });
 
     window.location.hash = '#home';
     app.addPollView = undefined;
