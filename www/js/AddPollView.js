@@ -36,11 +36,12 @@ var AddPollView = function() {
           user_id: object
         },
         function(response) {
-          window.location.hash = '#home';
-          app.addPollView = undefined;
         });
       });
     });
+
+    window.location.hash = '#home';
+    app.addPollView = undefined;
   };
 
   // hacky
