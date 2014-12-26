@@ -21,7 +21,7 @@ var AddPollView = function() {
 
       // Create Choices
       $.each(AddPollView.choices, function(index, object) {
-        $.post('https://decision-prototype.herokuapp.com/polls', {
+        $.post('https://decision-prototype.herokuapp.com/choices', {
           value: object,
           poll_id: pollId
         },
