@@ -4,7 +4,7 @@ var LoginView = function() {
     var first_name = $('.login-form .first-name-input').val();
     var last_name = $('.login-form .last-name-input').val();
 
-    if (!first_name && !last_name) {
+    if (!first_name || !last_name) {
       app.showAlert('Must have valid first and last name to log in');
       return;
     }
@@ -35,8 +35,8 @@ var LoginView = function() {
 
   this.initialize = function() {
     this.el = $('<div/>');
-    this.el.on('click', '.login-button', this.login);
-    this.el.on('click', '.signup-button', this.signup);
+    this.el.on('click', '#login-btn', this.login);
+    this.el.on('click', '#goto-signup-btn', this.signup);
   };
 
   this.initialize();
