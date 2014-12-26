@@ -4,22 +4,21 @@ var SignupView = function() {
     var first_name = $('.form-row .first-name-input').val()
     var last_name = $('.form-row .last-name-input').val();
     var age = parseInt($('.age-input').val());
-    var gender = $('.button-bar__item')[0].children[0].checked ? 'Male' : 'Female'; // oh dear...
+    var gender = $('.button-bar__item')[0].children[0].checked ? 'Male' : 'Female';
 
-    if (!first_name && !last_name) {
-      app.showAlert('Must have valid first and last name');
+    if (!first_name || !last_name || !age) {
+      app.showAlert('Must have valid first name, last name, and age');
       return;
     }
 
     $.post('https://decision-prototype.herokuapp.com/users', {
-        first_name: first_name,
-        last_name: last_name,
-        age: age,
-        gender: gender
-    },
-    function(response) {
-      console.log(response);
-      app.showAlert('New user created');
+      first_name: first_name,
+      last_name: last_name,
+      age: age,
+      gender: gender
+    }, function(response){
+      app.user_id = response.id;
+      window.location.hash = '#home';
     });
   };
 

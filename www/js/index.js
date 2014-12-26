@@ -51,11 +51,9 @@ var app = {
       var choicesHash = /#choices\/?/;
       var peopleHash = /#people\/?/;
 
+      // Just a bit faster for rendering LoginView
       if(!hash) {
-        if (!this.loginView) {
-          this.loginView = new LoginView().render();
-        }
-        this.slidePage(this.loginView);
+        this.slidePage(new LoginView().render());
         return;
       }
 
@@ -78,6 +76,8 @@ var app = {
         this.slidePage(new ChoicesView().render());
       } else if (hash.match(peopleHash)) {
         this.slidePage(new PeopleView().render());
+      } else {
+        this.slidePage(new LoginView().render());
       }
     },
 
