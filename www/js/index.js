@@ -82,33 +82,39 @@ var app = {
     },
 
     slidePage: function(page) {
-      var self = this;
-      var currentPageDest;
-
+      // Empty Stage
       if (!this.currentPage) {
-        $(page.el).attr('class', 'page stage-center');
+        $(page.el).addClass('page stage-center');
         $('body').append(page.el);
         this.currentPage = page;
         return;
       }
 
-      $('.stage-right, .stage-left').not('loginView').remove();
+      // Check for page on stage
+      // We assume the target page is on stage-left,
+      // this may not be the case but I'm simplifying
+      if ($('.stage-left').data('view') == page.el.data('view')) {
+        // Clear stage-right
+        $('.stage-right').remove();
+        // Add target view html to window
+        $('body').append(page.el);
 
-      if (page == app.loginView) {
-        $(page.el).attr('class', 'page stage-left');
-        currentPageDest = 'stage-right';
+        $(self.currentPage.el).attr('class', 'page transition stage-right');
+        $(page.el).attr('class', 'page transition stage-center');
+        this.currentPage = page;
       } else {
+        // Clear either side of the stage
+        $('.stage-right, .stage-left').remove();
+        // Prepare target view
         $(page.el).attr('class', 'page stage-right');
-        currentPageDest = 'stage-left';
+        // Add target view html to window
+        $('body').append(page.el);
+
+        // Maybe set a small timeout?
+        $(self.currentPage.el).attr('class', 'page transition stage-left');
+        $(page.el).attr('class', 'page transition stage-center');
+        this.currentPage = page;
       }
-
-      $('body').append(page.el);
-
-      setTimeout(function() {
-        $(self.currentPage.el).attr('class', 'page transition ' + currentPageDest);
-        $(page.el).attr('class', 'page stage-center transition');
-        self.currentPage = page;
-      });
     }
 };
 
