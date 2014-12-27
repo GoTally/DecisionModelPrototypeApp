@@ -23,7 +23,7 @@ var DeadlineView = function() {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='deadline'/>");
     this.el.on('click', '#deadline-ok-btn', this.ok);
   };
 

@@ -36,7 +36,7 @@ var PollView = function(pollId) {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='poll'/>");
     this.el.on('click', '#poll-back-btn', this.back);
     this.el.on('click', '#poll-submit-btn', this.submit);
   };

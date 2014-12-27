@@ -34,7 +34,7 @@ var LoginView = function() {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='login'/>");
     this.el.on('click', '#login-btn', this.login);
     this.el.on('click', '#goto-signup-btn', this.signup);
   };

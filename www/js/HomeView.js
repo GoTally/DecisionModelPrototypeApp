@@ -28,7 +28,7 @@ var HomeView = function() {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='home'/>");
     this.el.on('click', '#home-sort-btn', this.sort);
     this.el.on('click', '#home-add-btn', this.add);
   };

@@ -56,7 +56,7 @@ var AddPollView = function() {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='add-poll'/>");
     this.el.on('click', '#add-poll-back-btn', this.back)
     this.el.on('click', '#add-poll-send-btn', this.send)
   };
