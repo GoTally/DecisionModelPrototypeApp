@@ -12,7 +12,7 @@ var InviteesView = function(pollId) {
       dataType: 'jsonp',
       data:{invitees: true},
       success: function(response) {
-        self.el.html(InviteesView.template());
+        self.el.html(InviteesView.template(response));
         $.each(response.invitees, function(index, object) {
           $('.invitees-list').append(InviteesView.inviteetemplate(object));
         });
