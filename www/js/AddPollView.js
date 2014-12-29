@@ -46,6 +46,8 @@ var AddPollView = function() {
 
   // hacky
   this.bind = function() {
+    this.el.off('click', '#add-poll-back-btn')
+    this.el.off('click', '#add-poll-send-btn')
     this.el.on('click', '#add-poll-back-btn', this.back)
     this.el.on('click', '#add-poll-send-btn', this.send)
   };
@@ -57,8 +59,6 @@ var AddPollView = function() {
 
   this.initialize = function() {
     this.el = $('<div/>');
-    this.el.on('click', '#add-poll-back-btn', this.back)
-    this.el.on('click', '#add-poll-send-btn', this.send)
   };
 
   this.initialize(); 
