@@ -46,6 +46,7 @@ var app = {
       var signupHash = /#signup\/?/;
       var homeHash = /#home\/?/;
       var pollHash = /#poll\/\d+\/?$/;
+      var inviteesHash = /#poll\/\d+\/invitees\/?/;
       var newPollHash = /#newpoll\/?/;
       var deadlineHash = /#deadline\/?/;
       var choicesHash = /#choices\/?/;
@@ -64,6 +65,9 @@ var app = {
       } else if (hash.match(pollHash)) {
         var pollId = hash.split('/')[1];
         this.slidePage(new PollView(pollId).render());
+      } else if (hash.match(inviteesHash)) {
+        var pollId = hash.split('/')[1];
+        this.slidePage(new InviteesView(pollId).render());
       } else if (hash.match(newPollHash)) {
         if (!this.addPollView) {
           this.addPollView = new AddPollView().render();

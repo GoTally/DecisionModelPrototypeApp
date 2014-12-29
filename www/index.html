@@ -133,6 +133,33 @@
       </li>
     </script>
 
+    <!-- Invitees View -->
+    <script id='invitees-tpl' type='text/x-handlebars-template'>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <span id='invitees-back-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            <i class='fa fa-angle-left'></i> Back
+          </span>
+        </div>
+        <div class='navigation-bar__center'>
+          Invitees
+        </div>
+        <div class='navigation-bar__right'>
+        </div>
+      </div>
+      <div class='invitees-info'>
+        <ul class='list invitees-list'>
+        </ul>
+      </div>
+    </script>
+    <script id='invitees-entry-tpl' type='text/x-handlebars-template'>
+      <li class='list__item'>
+      <span class='list__item__line-height'>
+        {{this.first_name}} {{this.last_name}}
+      </span>
+      </li>
+    </script>
+
     <!-- Add New Poll View -->
     <script id='add-poll-tpl' type='text/x-handlebars-template'>
       <div class='navigation-bar'>
@@ -275,6 +302,7 @@
     <script type='text/javascript' src='js/ChoicesView.js'></script>
     <script type='text/javascript' src='js/DeadlineView.js'></script>
     <script type='text/javascript' src='js/AddPollView.js'></script>
+    <script type='text/javascript' src='js/InviteesView.js'></script>
     <script type='text/javascript' src='js/PollView.js'></script>
     <script type='text/javascript' src='js/SignupView.js'></script>
     <script type='text/javascript' src='js/LoginView.js'></script>
