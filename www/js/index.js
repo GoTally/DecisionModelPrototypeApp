@@ -99,7 +99,7 @@ var app = {
         // Add target view html to window
         $('body').append(page.el);
 
-        $(self.currentPage.el).attr('class', 'page transition stage-right');
+        $(this.currentPage.el).attr('class', 'page transition stage-right');
         $(page.el).attr('class', 'page transition stage-center');
         this.currentPage = page;
       } else {
@@ -111,7 +111,7 @@ var app = {
         $('body').append(page.el);
 
         // Maybe set a small timeout?
-        $(self.currentPage.el).attr('class', 'page transition stage-left');
+        $(this.currentPage.el).attr('class', 'page transition stage-left');
         $(page.el).attr('class', 'page transition stage-center');
         this.currentPage = page;
       }
