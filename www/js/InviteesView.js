@@ -1,5 +1,9 @@
 var InviteesView = function(pollId) {
 
+  this.back = function() {
+    window.location.hash = '#poll/' + pollId;
+  };
+
   this.render = function() {
     this.el.html(InviteesView.template());
 
@@ -8,6 +12,7 @@ var InviteesView = function(pollId) {
 
   this.initialize = function() {
     this.el = $('<div/>');
+    this.el.on('click', '#invitees-back-btn', this.back);
   };
 
   this.initialize();
