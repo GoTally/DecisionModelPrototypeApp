@@ -17,7 +17,7 @@ var SignupView = function() {
       age: age,
       gender: gender
     }, function(response){
-      app.user_id = response.id;
+      window.sessionStorage.user_id = response.id;
       window.location.hash = '#home';
     });
   };

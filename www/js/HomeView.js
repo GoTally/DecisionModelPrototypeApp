@@ -11,7 +11,7 @@ var HomeView = function() {
 
   this.render = function() {
     this.el.html(HomeView.template());
-    var url = 'https://decision-prototype.herokuapp.com/users/'+app.user_id;
+    var url = 'https://decision-prototype.herokuapp.com/users/'+window.sessionStorage.user_id;
 
     $.ajax({
       url: url,

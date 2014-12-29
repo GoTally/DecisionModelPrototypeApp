@@ -9,7 +9,7 @@ var PollView = function(pollId) {
       if ($(object).find('input').is(':checked')) {
         $.post('https://decision-prototype.herokuapp.com/votes', {
           choice_id: $(object).data('choice-id'),
-          user_id: app.user_id
+          user_id: window.sessionStorage.user_id
         }, function(response) {
             console.log(response);
         });

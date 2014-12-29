@@ -15,8 +15,7 @@ var LoginView = function() {
       },
       function(response) {
         if(response.length) {
-          // Maybe save to local or session storage
-          app.user_id = response[0].id;
+          window.sessionStorage.user_id = response[0].id;
           window.location.hash = '#home';
           return;
         }
