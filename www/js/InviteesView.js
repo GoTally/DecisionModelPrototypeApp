@@ -5,7 +5,19 @@ var InviteesView = function(pollId) {
   };
 
   this.render = function() {
-    this.el.html(InviteesView.template());
+    var self = this;
+
+    $.ajax({
+      url: 'https://decision-prototype.herokuapp.com/polls/'+pollId,
+      dataType: 'jsonp',
+      data:{invitees: true},
+      success: function(response) {
+        self.el.html(InviteesView.template());
+        $.each(response.invitees, function(index, object) {
+          $('.invitees-list').append(InviteesView.inviteetemplate(object));
+        });
+      }
+    });
 
     return this;
   };
