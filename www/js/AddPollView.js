@@ -44,7 +44,6 @@ var AddPollView = function() {
     app.addPollView = undefined;
   };
 
-  // hacky
   this.bind = function() {
     this.el.off('click', '#add-poll-back-btn')
     this.el.off('click', '#add-poll-send-btn')
