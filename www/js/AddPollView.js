@@ -14,7 +14,7 @@ var AddPollView = function() {
       title: $('.poll-data .new-poll-title').val(),
       description: $('.poll-data .new-poll-description').val(),
       status: 'new',
-      creator_user_id: window.sessionStorage.user_id
+      creator_user_id: window.localStorage.user_id
     },
     function(response) {
       pollId = response.id;

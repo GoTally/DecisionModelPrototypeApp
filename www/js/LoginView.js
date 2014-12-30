@@ -15,7 +15,7 @@ var LoginView = function() {
       },
       function(response) {
         if(response.length) {
-          window.sessionStorage.user_id = response[0].id;
+          window.localStorage.user_id = response[0].id;
           window.location.hash = '#home';
           return;
         }

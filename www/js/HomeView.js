@@ -9,9 +9,14 @@ var HomeView = function() {
     window.location.hash = '#newpoll';
   };
 
+  this.logout = function() {
+    window.localStorage.removeItem('user_id');
+    window.location.hash = '#';
+  };
+
   this.render = function() {
     this.el.html(HomeView.template());
-    var url = 'https://decision-prototype.herokuapp.com/users/'+window.sessionStorage.user_id;
+    var url = 'https://decision-prototype.herokuapp.com/users/'+window.localStorage.user_id;
 
     $.ajax({
       url: url,
@@ -29,7 +34,7 @@ var HomeView = function() {
 
   this.initialize = function() {
     this.el = $('<div/>');
-    this.el.on('click', '#home-sort-btn', this.sort);
+    this.el.on('click', '#home-logout-btn', this.logout);
     this.el.on('click', '#home-add-btn', this.add);
   };
 
