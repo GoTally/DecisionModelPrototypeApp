@@ -8,6 +8,7 @@
     <meta name='viewport' content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' />
     <link rel='stylesheet' type='text/css' href='css/font-awesome.min.css' />
     <link rel='stylesheet' type='text/css' href='css/index.css' />
+    <link rel='stylesheet' type='text/css' href='css/onsen.css' />
     <title>Decision Model Prototype</title>
   </head>
   <body>
@@ -71,8 +72,8 @@
     <script id='home-tpl' type='text/x-handlebars-template'>
       <div class='navigation-bar'>
         <div class='navigation-bar__left'>
-          <span id='home-sort-btn' class='toolbar-button--quiet navigation-bar__line-height'>
-            Sort
+          <span id='home-logout-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            Logout
           </span>
         </div>
         <div class='navigation-bar__center'>
@@ -130,6 +131,33 @@
         <div class='checkbox__checkmark checkbox--list-item__checkmark'></div>
         {{this.value}}
       </label>
+      </li>
+    </script>
+
+    <!-- Invitees View -->
+    <script id='invitees-tpl' type='text/x-handlebars-template'>
+      <div class='navigation-bar'>
+        <div class='navigation-bar__left'>
+          <span id='invitees-back-btn' class='toolbar-button--quiet navigation-bar__line-height'>
+            <i class='fa fa-angle-left'></i> Back
+          </span>
+        </div>
+        <div class='navigation-bar__center'>
+          Invitees for {{this.title}}
+        </div>
+        <div class='navigation-bar__right'>
+        </div>
+      </div>
+      <div class='invitees-info'>
+        <ul class='list invitees-list'>
+        </ul>
+      </div>
+    </script>
+    <script id='invitees-entry-tpl' type='text/x-handlebars-template'>
+      <li class='list__item'>
+      <span class='list__item__line-height'>
+        {{this.first_name}} {{this.last_name}}
+      </span>
       </li>
     </script>
 
@@ -275,6 +303,7 @@
     <script type='text/javascript' src='js/ChoicesView.js'></script>
     <script type='text/javascript' src='js/DeadlineView.js'></script>
     <script type='text/javascript' src='js/AddPollView.js'></script>
+    <script type='text/javascript' src='js/InviteesView.js'></script>
     <script type='text/javascript' src='js/PollView.js'></script>
     <script type='text/javascript' src='js/SignupView.js'></script>
     <script type='text/javascript' src='js/LoginView.js'></script>
