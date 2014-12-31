@@ -86,38 +86,51 @@ var app = {
     },
 
     slidePage: function(page) {
+      var self = this;
+
       // Empty Stage
+      // This should only be for LoginView
       if (!this.currentPage) {
         $(page.el).addClass('page stage-center');
         $('body').append(page.el);
         this.currentPage = page;
         return;
       }
-
+      
       // Check for page on stage
       // We assume the target page is on stage-left,
       // this may not be the case but I'm simplifying
       if ($('.stage-left').data('view') == page.el.data('view')) {
-        // Clear stage-right
+        // Clear left and right stage
         $('.stage-right').remove();
+        $('.stage-left').remove();
         // Add target view html to window
         $('body').append(page.el);
+        $(page.el).attr('class', 'page stage-center');
 
-        $(this.currentPage.el).attr('class', 'page transition stage-right');
-        $(page.el).attr('class', 'page transition stage-center');
-        this.currentPage = page;
+        setTimeout(function() {
+          $(self.currentPage.el).attr('class', 'page transition stage-right');
+          self.currentPage = page;
+        });
       } else {
-        // Clear either side of the stage
-        $('.stage-right, .stage-left').remove();
-        // Prepare target view
-        $(page.el).attr('class', 'page stage-right');
-        // Add target view html to window
+        // Clear left and right stage
+        $('.stage-right').remove();
+        $('.stage-left').remove();
+
+        // Move new page to stage-right
+        $(page.el).attr('class', 'page bg stage-right');
+        // Appen new page html to body
         $('body').append(page.el);
 
-        // Maybe set a small timeout?
-        $(this.currentPage.el).attr('class', 'page transition stage-left');
-        $(page.el).attr('class', 'page transition stage-center');
-        this.currentPage = page;
+        // Transition new page to stage-center
+        setTimeout(function() {
+          $(page.el).removeClass('stage-right');
+          $(page.el).addClass('stage-center transition');
+        });
+        setTimeout(function() {
+          $(self.currentPage.el).attr('class', 'page stage-left');
+          self.currentPage = page;
+        }, 375);
       }
     }
 };

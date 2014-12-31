@@ -127,6 +127,10 @@ a {
   -o-transition-duration: .375s;
 }
 
+.bg {
+  background: #242424;
+}
+
 /* Poll View */
 .poll-info {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
