@@ -85,6 +85,22 @@ var app = {
       }
     },
 
+    // EH...
+    slidePageVert: function(page) {
+      var self = this;
+      $(page.el).attr('class', 'page bg stage-bottom');
+      $('body').append(page.el);
+
+      setTimeout(function() {
+        $(page.el).removeClass('stage-bottom');
+        $(page.el).addClass('stage-center transition');
+      });
+      setTimeout(function() {
+        $(self.currentPage.el).hide();
+        self.currentPage = page;
+      }, 375);
+    },
+
     slidePage: function(page) {
       var self = this;
 
