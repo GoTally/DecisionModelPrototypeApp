@@ -3,6 +3,10 @@ var AddPollView = function() {
   this.back = function() {
     window.location.hash = '#home';
     app.addPollView = undefined;
+    // I don't like this
+    AddPollView.choices = undefined;
+    AddPollView.deadline = undefined;
+    AddPollView.people = undefined;
   };
 
   this.send = function() {
@@ -42,6 +46,9 @@ var AddPollView = function() {
 
     window.location.hash = '#home';
     app.addPollView = undefined;
+    AddPollView.choices = undefined;
+    AddPollView.deadline = undefined;
+    AddPollView.people = undefined;
   };
 
   // hacky
