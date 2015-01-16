@@ -3,6 +3,10 @@ var AddPollView = function() {
   this.back = function() {
     window.location.hash = '#home';
     app.addPollView = undefined;
+    // I don't like this
+    AddPollView.choices = undefined;
+    AddPollView.deadline = undefined;
+    AddPollView.people = undefined;
   };
 
   this.send = function() {
@@ -42,10 +46,14 @@ var AddPollView = function() {
 
     window.location.hash = '#home';
     app.addPollView = undefined;
+    AddPollView.choices = undefined;
+    AddPollView.deadline = undefined;
+    AddPollView.people = undefined;
   };
 
-  // hacky
   this.bind = function() {
+    this.el.off('click', '#add-poll-back-btn')
+    this.el.off('click', '#add-poll-send-btn')
     this.el.on('click', '#add-poll-back-btn', this.back)
     this.el.on('click', '#add-poll-send-btn', this.send)
   };
