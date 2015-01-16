@@ -113,7 +113,7 @@
           </span>
         </div>
       </div>
-      <div class='poll-info'>
+      <div class='poll-info' data-poll-id={{this.id}}>
         <h1 class='poll-title'>{{this.title}}</h1>
         <span class='poll-time-left'>time left to vote</span>
         <br>
@@ -131,6 +131,11 @@
         <div class='checkbox__checkmark checkbox--list-item__checkmark'></div>
         {{this.value}}
       </label>
+      </li>
+    </script>
+    <script id='poll-vote-tpl' type='text/x-handlebars-template'>
+      <li class='list__item'>
+      <span class='{{this.voted}}'>{{this.value}}</span>
       </li>
     </script>
 

@@ -188,3 +188,8 @@ button.delete-choice-btn span {
   padding-right: 15px;
   color: #ce0b24;
 }
+
+.not-voted {
+  text-decoration: line-through;
+  color: #424242;
+}
