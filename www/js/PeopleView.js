@@ -33,7 +33,7 @@ var PeopleView = function() {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='people'/>");
     this.el.on('click', '#people-ok-btn', this.ok);
   };
 

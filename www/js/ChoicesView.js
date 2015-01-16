@@ -33,7 +33,7 @@ var ChoicesView = function() {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='choices'/>");
     this.el.on('click', '#choices-ok-btn', this.ok);
     this.el.on('click', '.add-choice-btn', this.addChoice);
     this.el.on('click', '.delete-choice-btn', this.deleteChoice);

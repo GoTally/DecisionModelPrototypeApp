@@ -28,7 +28,7 @@ var SignupView = function() {
   };
 
   this.initialize = function() {
-    this.el = $('<div/>');
+    this.el = $("<div data-view='signup'/>");
     this.el.on('click', '.signup-button', this.createUser);
   };
 

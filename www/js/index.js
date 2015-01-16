@@ -85,34 +85,69 @@ var app = {
       }
     },
 
+    // EH...
+    slidePageVert: function(page) {
+      var self = this;
+      $(page.el).attr('class', 'page bg stage-bottom');
+      $('body').append(page.el);
+
+      setTimeout(function() {
+        $(page.el).removeClass('stage-bottom');
+        $(page.el).addClass('stage-center transition');
+      });
+      setTimeout(function() {
+        $(self.currentPage.el).hide();
+        self.currentPage = page;
+      }, 375);
+    },
+
     slidePage: function(page) {
       var self = this;
-      var currentPageDest;
 
+      // Empty Stage
+      // This should only be for LoginView
       if (!this.currentPage) {
-        $(page.el).attr('class', 'page stage-center');
+        $(page.el).addClass('page stage-center');
         $('body').append(page.el);
         this.currentPage = page;
         return;
       }
+      
+      // Check for page on stage
+      // We assume the target page is on stage-left,
+      // this may not be the case but I'm simplifying
+      if ($('.stage-left').data('view') == page.el.data('view')) {
+        // Clear left and right stage
+        $('.stage-right').remove();
+        $('.stage-left').remove();
+        // Add target view html to window
+        $('body').append(page.el);
+        $(page.el).attr('class', 'page stage-center');
 
-      $('.stage-right, .stage-left').not('loginView').remove();
-
-      if (page == app.loginView) {
-        $(page.el).attr('class', 'page stage-left');
-        currentPageDest = 'stage-right';
+        setTimeout(function() {
+          $(self.currentPage.el).attr('class', 'page transition stage-right');
+          self.currentPage = page;
+        });
       } else {
-        $(page.el).attr('class', 'page stage-right');
-        currentPageDest = 'stage-left';
+        // Clear left and right stage
+        $('.stage-right').remove();
+        $('.stage-left').remove();
+
+        // Move new page to stage-right
+        $(page.el).attr('class', 'page bg stage-right');
+        // Appen new page html to body
+        $('body').append(page.el);
+
+        // Transition new page to stage-center
+        setTimeout(function() {
+          $(page.el).removeClass('stage-right');
+          $(page.el).addClass('stage-center transition');
+        });
+        setTimeout(function() {
+          $(self.currentPage.el).attr('class', 'page stage-left');
+          self.currentPage = page;
+        }, 375);
       }
-
-      $('body').append(page.el);
-
-      setTimeout(function() {
-        $(self.currentPage.el).attr('class', 'page transition ' + currentPageDest);
-        $(page.el).attr('class', 'page stage-center transition');
-        self.currentPage = page;
-      });
     }
 };
 

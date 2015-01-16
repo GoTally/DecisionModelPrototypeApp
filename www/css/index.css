@@ -121,10 +121,22 @@ a {
   left: 100%;
 }
 
+.stage-bottom {
+  top: -100%;
+}
+
+.stage-top {
+  top: 100%;
+}
+
 .transition {
   -moz-transition-duration: .375s;
   -webkit-transition-duration: .375s;
   -o-transition-duration: .375s;
+}
+
+.bg {
+  background: #242424;
 }
 
 /* Poll View */
