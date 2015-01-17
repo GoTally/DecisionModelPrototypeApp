@@ -143,12 +143,12 @@ a {
 .poll-info {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-size: 17px;
-  color: #fff;
+  color: #000;
   margin: 10px;
 }
 
 h1.poll-title {
-  color: #fff;
+  color: #000;
   font-size: 20px;
   text-align: left;
 }
@@ -160,7 +160,7 @@ h1.poll-title {
 
 /* Home View */
 .poll-entry {
-  color: #fff;
+  color: #000;
 }
 
 /* Choices View */
@@ -204,4 +204,33 @@ button.delete-choice-btn span {
 .not-voted {
   text-decoration: line-through;
   color: #424242;
+}
+
+/* Extra Login and Sign up */
+input[type=text] {
+  display: block;
+  width: 100%;
+  outline: none;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+input.age-input {
+  width: 100%;
+}
+
+input[type=text],
+input[type=number] {
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Extra textarea */
+.textarea {
+  width: 100%;
+}
+
+input.new-poll-title {
+  font-size: 18px;
 }
