@@ -31,6 +31,7 @@ var AddPollView = function() {
           poll_id: pollId
         },
         function(response) {
+          AddPollView.choices = undefined;
         });
       });
 
@@ -41,15 +42,15 @@ var AddPollView = function() {
           user_id: object
         },
         function(response) {
+          AddPollView.people = undefined;
         });
       });
+
+      AddPollView.deadline = undefined;
+      app.addPollView = undefined;
     });
 
     window.location.hash = '#home';
-    app.addPollView = undefined;
-    AddPollView.choices = undefined;
-    AddPollView.deadline = undefined;
-    AddPollView.people = undefined;
   };
 
   this.bind = function() {
