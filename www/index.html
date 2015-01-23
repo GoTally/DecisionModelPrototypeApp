@@ -229,9 +229,9 @@
     <script id='deadline-time-tpl' type='text/x-handlers-template'>
       <li class='list__item list__item--tappable'>
       <label class='radio-button radio-button--list-item'>
-        <input type='radio' name='time' data-time='{{this}}'>
+        <input type='radio' name='time' data-time='{{this.minutes}}'>
         <div class='radio-button__checkmark radio-button--list-item__checkmark'></div>
-        {{this}}
+        {{this.displayText}}
       </label>
       </li>
     </script>

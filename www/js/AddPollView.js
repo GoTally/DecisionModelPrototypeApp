@@ -18,6 +18,7 @@ var AddPollView = function() {
       title: $('.poll-data .new-poll-title').val(),
       description: $('.poll-data .new-poll-description').val(),
       status: 'new',
+      duration: AddPollView.deadline,
       creator_user_id: window.localStorage.user_id
     },
     function(response) {
