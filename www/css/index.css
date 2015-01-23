@@ -234,3 +234,10 @@ input[type=number] {
 input.new-poll-title {
   font-size: 18px;
 }
+
+/* Disable submit button */
+.toolbar-button.disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
