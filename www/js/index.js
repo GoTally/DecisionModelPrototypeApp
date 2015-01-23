@@ -51,6 +51,7 @@ var app = {
       var deadlineHash = /#deadline\/?/;
       var choicesHash = /#choices\/?/;
       var peopleHash = /#people\/?/;
+      var resultsHash = /#results\/?/;
 
       // Just a bit faster for rendering LoginView
       if(!hash) {
@@ -80,6 +81,9 @@ var app = {
         this.slidePage(new ChoicesView().render());
       } else if (hash.match(peopleHash)) {
         this.slidePage(new PeopleView().render());
+      } else if (hash.match(resultsHash)) {
+        var pollId = hash.split('/')[1];
+        this.slidePage(new ResultsView().render());
       } else {
         this.slidePage(new LoginView().render());
       }
