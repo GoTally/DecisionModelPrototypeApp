@@ -116,7 +116,8 @@
       </div>
       <div class='poll-info' data-poll-id={{this.id}}>
         <h1 class='poll-title'>{{this.title}}</h1>
-        <span class='poll-time-left'>time left to vote</span>
+        <!--<span class='poll-time-left'>time left to vote {{this.timeLeft}}</span>-->
+        <span class='poll-time-left'>{{this.timeLeftMessage}}</span>
         <br>
         <span class='poll-description'>{{this.description}}</span>
         <a href='#poll/{{this.id}}/invitees' class='list__item list__item--chevron'>Invitees</a>

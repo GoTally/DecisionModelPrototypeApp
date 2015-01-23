@@ -34,7 +34,10 @@ var PollView = function(pollId) {
       data: {choices: true},
       success: function(response) {
         poll = response;
+        poll.timeLeftMessage = getTimeLeftMessage(poll.created_at, poll.duration);
         self.el.html(PollView.template(poll));
+        // More gross
+        if (poll.timeLeftMessage == 'Voting has ended') { $('.poll-title.poll-vote').html(''); return; }
         // Check for existing votes
         $.ajax({
           url: 'https://decision-prototype.herokuapp.com/votes',
@@ -67,6 +70,16 @@ var PollView = function(pollId) {
       }
     });
     return vote;
+  };
+
+  getTimeLeftMessage = function(created_at, duration) {
+    if (!duration) { return 'No time constraint'; }
+
+    var expirationDate = moment(created_at).add(duration, 'minutes');
+    if (!expirationDate.isAfter(moment())) {
+      return 'Voting has ended';
+    }
+    return 'Voting will close ' + expirationDate.fromNow();
   };
 
   this.initialize = function() {
