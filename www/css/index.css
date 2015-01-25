@@ -243,7 +243,7 @@ input.new-poll-title {
 }
 
 /* Results button in Login View */
-.results-btn {
+.results-button {
   margin: 25px auto;
   width: 85%;
 }
