@@ -124,6 +124,7 @@
         <h1 class='poll-title poll-vote'>Vote</h1>
         <ul class='list poll-choice-list'>
         </ul>
+        <a id='results-btn' class='button button--large results-button'>Results</a>
       </div>
     </script>
     <script id='poll-choice-tpl' type='text/x-handlebars-template'>
@@ -317,6 +318,17 @@
           </span>
         </div>
       </div>
+      <div>
+        <ul id='results-list' class='list'>
+        </ul>
+      </div>
+    </script>
+    <script id='result-entry-tpl' type='text/x-handlebars-template'>
+      <li class='list__item'>
+      <span class='list__item__line-height'>
+        {{this.value}} - {{this.votes_count}}
+      </span>
+      </li>
     </script>
 
     <script type='text/javascript' src='cordova.js'></script>

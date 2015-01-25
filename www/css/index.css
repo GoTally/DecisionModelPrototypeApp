@@ -241,3 +241,9 @@ input.new-poll-title {
   cursor: default;
   pointer-events: none;
 }
+
+/* Results button in Login View */
+.results-btn {
+  margin: 25px auto;
+  width: 85%;
+}

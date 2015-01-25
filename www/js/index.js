@@ -83,7 +83,7 @@ var app = {
         this.slidePage(new PeopleView().render());
       } else if (hash.match(resultsHash)) {
         var pollId = hash.split('/')[1];
-        this.slidePage(new ResultsView().render());
+        this.slidePage(new ResultsView(pollId).render());
       } else {
         this.slidePage(new LoginView().render());
       }

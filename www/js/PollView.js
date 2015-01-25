@@ -20,6 +20,10 @@ var PollView = function(pollId) {
     app.showAlert('Your votes were successfully submitted!');
   };
 
+  this.results = function() {
+    window.location.hash = '#results/' + pollId;
+  };
+
   this.displayPoll = function(response) {
     var self = this;
   };
@@ -93,6 +97,7 @@ var PollView = function(pollId) {
     this.el = $("<div data-view='poll'/>");
     this.el.on('click', '#poll-back-btn', this.back);
     this.el.on('click', '#poll-submit-btn', this.submit);
+    this.el.on('click', '#results-btn', this.results);
   };
 
   this.initialize();
